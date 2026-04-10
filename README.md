@@ -1,3 +1,36 @@
 # Single-Cell Profiling Revealed the Unique Phenotypic Signatures of Malignant NK and T Cells and Immune Dynamics in Extranodal NK/T-Cell Lymphoma Before and After PD-1 Blockade
 
-Extranodal NK/T-cell lymphoma (ENKTCL) is an aggressive, EBV-associated malignancy with limited single-cell profiling in the context of immune checkpoint inhibition. We performed longitudinal single-cell RNA sequencing with T-cell receptor (TCR)/B-cell receptor (BCR) profiling on 11 patients treated with PD-1-based chemoimmunotherapy. Four LMP-1-negative malignant populations—two NK-cell-derived and two T-cell-derived populations—were identified; these populations were characterized by chromosomal instability, stemness, and differentiation potential and were distinct from LMP-1+ mature NK cells. At 3 weeks post-PD-1 therapy, malignant NK cells were nearly eradicated, and the residual tumor burden was primarily that of malignant T cells. The proportions of terminally exhausted T cells and ZNF683+ tissue-resident memory-like cytotoxic T cells decreased, whereas the proportions of FGFBP2+ NKT-like and FOXP3+ regulatory T cells increased, indicating that peak antitumor immunity occurs early during PD-1 therapy in ENKTCL. The immunosuppressive microenvironment is sustained by mature NK cells via PD-L1/PD-1 and malignant NK cells via DPP4-associated chemokine signaling. These findings provide a single-cell atlas of ENKTCL under PD-1 therapy, highlighting distinct malignant programs and immunosuppressive mechanisms that may be targeted with immunotherapy in the future.
+## Overview
+Extranodal NK/T-cell lymphoma (ENKTCL) is an Epstein-Barr virus-associated malignancy with heterogeneous responses to immune checkpoint blockade. We performed longitudinal single-cell RNA sequencing with paired T-cell and B-cell receptor profiling in 11 patients treated with PD-1-based chemoimmunotherapy. Integrated transcriptomic and copy number analyses identified chromosome 6p21 amplification (chr6p21Amp) and deletion (chr6p21Del) as a major genomic axis stratifying malignant NK/T cells. Chr6p21Amp malignant NK cells corresponded to LMP-1 and PD-L1 positive classical states, whereas chr6p21Del cells exhibited reduced MHC class I gene expression and adopted stem-like programs. PD-1 therapy induces immune remodeling within the microenvironment, characterized by an expansion of CXCL13⁺ helper T cells, establishing a structured, long-term immunoactivated state. PD-1 therapy rapidly depleted malignant NK cells, whereas malignant T cells persisted with dynamic immune remodeling. Immunosuppression was sustained through PD-L1/PD-1 interactions and DPP4-associated chemokine signaling. These findings establish a mechanistic link between malignant genomic features and immune microenvironment remodeling following PD-1 blockade, guiding the rational design of next-generation immunotherapies for NKTCL. 
+
+## User Guide
+
+### Environmental Setup
+This repository contains Jupyter notebooks (.ipynb) with all analysis code. Please ensure the following software versions are installed:
+- Python: 3.11.11
+- R: 4.3.3
+
+**Python Dependencies**
+Install all required Python packages using the provided `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+**Data Download**
+Processed data files are not included in the repository due to file size limits. Please use the provided shell script to download the data:
+```bash
+bash download.sh
+```
+This script will automatically download all processed data files into the `data/` directory.
+
+### Running the Analysis
+
+The Jupyter notebooks are organized into two categories:
+
+1.  **Final Figures (Clean & Well-Documented)**
+    - **File:** `Figure1-6.ipynb`
+    - **Purpose:** This notebook is comprehensive and well-documented. It contains the finalized code, analysis, and plotting commands required to generate the main figures in the manuscript. For users wishing to understand the final methodology or reproduce the publication results, this is the primary file to review and execute.
+
+2.  **Data Processing (Intermediate & Messy)**
+    - **Files:** `01_NKTCL_basic.ipynb` to `06_NKTCL_monocle.ipynb`
+    - **Purpose:** These notebooks contain the step-by-step raw data processing pipelines, quality control steps, and intermediate statistical analyses.
+    - **Note:** The code in these notebooks is functional but may appear "messy" (i.e., contains verbose comments, debugging lines, and exploratory tests). They represent the initial data wrangling and analysis exploration phases. While they are provided for full transparency, they are less streamlined than the final figure notebook.
