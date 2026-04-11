@@ -20,8 +20,10 @@ Processed data files are not included in the repository due to file size limits.
 ```bash
 bash download.sh
 ```
-This script will automatically download all processed data files into the `data/` directory.
-
+This script will automatically download all processed data files into the `data/` directory. If you intend to run analyses on the external validation datasets, please also execute:
+```bash
+bash download-external.sh
+```
 ### Running the Analysis
 
 The Jupyter notebooks are organized into two categories:
