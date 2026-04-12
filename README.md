@@ -24,6 +24,10 @@ This script will automatically download all processed data files into the `data/
 ```bash
 bash download-external.sh
 ```
+If you intend to run numbat validation, please also execute:
+```bash
+bash download-numbat.sh
+```
 ### Running the Analysis
 
 The Jupyter notebooks are organized into two categories:
